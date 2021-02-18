@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "da651b76-9d89-40f3-b017-999df30763ec",
+		"name": "Sayphr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"hi\",\n    \"password\": \"123\",\n    \"email\": \"mete@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}v1/auth/register",
+							"host": [
+								"{{HOST}}v1"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"hi\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}v1/auth/login",
+							"host": [
+								"{{HOST}}v1"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Videos",
+			"item": [
+				{
+					"name": "Get Video By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo0LCJleHBpcmVBdCI6MTYxNTkyNDU4ODY1OCwiaWF0IjoxNjEzNTA1Mzg4fQ.DAvtEGhSMV6Sqvuni1Igtu8jw4-jU7lmDAxeX8h5bgk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}v1/videos/11b7c2dd-7e0b-4ca7-9654-3b704032a9ea",
+							"host": [
+								"{{HOST}}v1"
+							],
+							"path": [
+								"videos",
+								"11b7c2dd-7e0b-4ca7-9654-3b704032a9ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Videos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo0LCJleHBpcmVBdCI6MTYxNTkyNDU4ODY1OCwiaWF0IjoxNjEzNTA1Mzg4fQ.DAvtEGhSMV6Sqvuni1Igtu8jw4-jU7lmDAxeX8h5bgk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}v1/videos?page=1&size=2",
+							"host": [
+								"{{HOST}}v1"
+							],
+							"path": [
+								"videos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Videos By Aspect Ratio",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjo0LCJleHBpcmVBdCI6MTYxNTkyNDU4ODY1OCwiaWF0IjoxNjEzNTA1Mzg4fQ.DAvtEGhSMV6Sqvuni1Igtu8jw4-jU7lmDAxeX8h5bgk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}v1/videos/aspect-ratio/4:3?page=1&size=6",
+							"host": [
+								"{{HOST}}v1"
+							],
+							"path": [
+								"videos",
+								"aspect-ratio",
+								"4:3"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWZhYjExODc1YTU5ZDcwMDQ5ZGU0ZmI5IiwiZXhwaXJlQXQiOjE2MTA3MzkyNDcxMDAsImlhdCI6MTYwODA2MDg0N30.3PCgAdhTp6GxQ1rRM0_60mNhTL3gpdlhjdIR_81k3jg",
+				"type": "string"
+			}
+		]
+	}
+}
